@@ -1,0 +1,97 @@
+/* Responsive layout: desktop styles stay in styles.css. */
+.menu-toggle { display: none; }
+.hero-content, .hero-image, .space-content, .space-image,
+.encounters-content, .encounters-image, .experience-content, .experience-image { min-width: 0; }
+.hero-image { flex: 1; }
+.hero-image img { width: 100%; }
+.btn-primary, .btn-secondary, .btn-whatsapp { text-align: center; }
+.btn-primary i, .btn-whatsapp i { margin-right: .4rem; }
+.footer-social a { display: inline-flex; align-items: center; gap: .5rem; }
+@media (max-width: 1100px) {
+    header { flex-wrap: wrap; gap: 1rem; padding: .8rem 5%; }
+    #logo img { width: 130px; }
+    header[data-menu-ready] .menu-toggle {
+        display: inline-flex; align-items: center; gap: .65rem;
+        min-height: 44px; padding: .65rem 1rem;
+        border: 1px solid var(--primary-color); border-radius: 10px;
+        background: transparent; color: var(--text-light);
+        font: inherit; font-weight: 700; cursor: pointer;
+    }
+    .menu-toggle-icon { width: 18px; height: 14px; border-block: 2px solid currentColor; position: relative; }
+    .menu-toggle-icon::after { content: ''; position: absolute; top: 4px; left: 0; width: 18px; border-top: 2px solid currentColor; }
+    header nav { width: 100%; flex-direction: column; align-items: stretch; gap: 1rem; padding-block: .5rem; }
+    header nav ul { flex-wrap: wrap; gap: .3rem 1rem; }
+    header nav ul a { display: block; padding: .65rem .25rem; min-height: 44px; }
+    header nav > .btn-whatsapp { align-self: flex-start; }
+    header[data-menu-ready]:not(.menu-open) nav { display: none; }
+    header[data-menu-ready] nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ages-container, .method-container, .values-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .services-container { gap: 1.25rem; }
+    .service-card { padding: 1.5rem; }
+    .footer-container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+}
+@media (max-width: 900px) {
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) { padding: 3.5rem 6%; }
+    :is(#hero, #hero-clases, #hero-produccion, #hero-eventos, #hero-nosotros, #espacio, #experiencia, #encuentros-novastage) {
+        flex-direction: column; align-items: stretch; gap: 2rem; min-height: auto;
+    }
+    :is(#hero, #hero-clases, #hero-produccion, #hero-eventos, #hero-nosotros) .hero-content,
+    .space-content, .experience-content, .encounters-content { max-width: none; }
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) h2, :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) .section-heading h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+    :is(#hero, #hero-clases, #hero-produccion, #hero-eventos, #hero-nosotros) .hero-image img,
+    .space-image img, .experience-image img, .encounters-image img {
+        max-width: none; height: clamp(280px, 48vw, 440px); border-radius: 18px;
+    }
+    #hero-eventos .hero-actions { justify-content: flex-start; }
+    .services-container { display: grid; grid-template-columns: 1fr; }
+    .service-card { min-height: auto; }
+    .production-card { flex-basis: calc(50% - 1rem); }
+    .contact-options { grid-template-columns: 1fr; }
+    .contact-card { min-height: auto; }
+    .teacher-card img { height: 280px; }
+    .location-map { height: 320px; }
+    #ubicacion { padding-bottom: 1.5rem; }
+    #horarios-contacto { padding-top: 2rem; }
+    #footer { padding: 3rem 6% 1.5rem; }
+}
+@media (max-width: 600px) {
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) { padding: 2.75rem 1.25rem; }
+    header { padding-inline: 1.25rem; }
+    #logo img { width: 115px; }
+    header[data-menu-ready] nav ul { grid-template-columns: 1fr; }
+    header nav > .btn-whatsapp { align-self: stretch; }
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) h1 { font-size: clamp(1.9rem, 7.5vw, 2.5rem); margin-bottom: 1.25rem; }
+    :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) h2, :is(#hero, #servicios, #instrumentos, #edades, #metodo, #profesores, #primera-clase, #espacio, #faq, #cta-final, #hero-clases, #como-trabajamos, #aprendizaje, #cta-clases, #hero-contacto, #contacto-info, #ubicacion, #horarios-contacto, #redes, #cta-contacto, #hero-eventos, #servicios-eventos, #proceso-eventos, #encuentros-novastage, #cta-eventos, #hero-nosotros, #nuestra-idea, #valores, #experiencia, #cta-nosotros, #hero-produccion, #servicios-produccion, #proceso, #asesoramiento, #cta-produccion) .section-heading h2 { font-size: clamp(1.7rem, 6.5vw, 2rem); }
+    #hero .hero-content > p, #hero-eventos .hero-description { font-size: 1.05rem; }
+    .hero-actions, #hero-eventos .hero-actions, #cta-nosotros .cta-actions { flex-direction: column; align-items: stretch; gap: .75rem; }
+    .hero-actions a, .cta-actions a { width: 100%; }
+    .btn-primary, .btn-secondary, .btn-whatsapp { min-height: 44px; padding: .85rem 1.1rem; }
+    .hero-info { gap: .5rem; }
+    .hero-info span, #hero-clases .hero-info span { font-size: .8rem; }
+    .ages-container, .method-container, .teachers-container, .trial-steps,
+    .work-container, .learning-points, #proceso .process-container,
+    .event-process, .values-container, #servicios-eventos .events-services,
+    .footer-container { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .production-card { flex-basis: 100%; }
+    .production-services { gap: 1.25rem; }
+    .instruments-container { gap: 1rem; }
+    .instrument-card { flex-basis: 100%; max-width: none; padding: 1.5rem; }
+    .instrument-card p:last-child { margin-bottom: 0; }
+    .age-card, .contact-card, #proceso-eventos .process-step, #servicios-eventos .event-card { min-height: auto; }
+    .contact-card .btn-whatsapp { align-self: stretch; }
+    .teacher-card img { height: 300px; }
+    .advice-content { padding-left: 1rem; }
+    .location-map { height: 280px; border-radius: 16px; }
+    #ubicacion { padding-bottom: 1.25rem; }
+    #horarios-contacto { padding-top: 1.75rem; }
+    #footer { padding: 2.75rem 1.25rem 1.25rem; }
+    .footer-container { gap: 2rem; }
+    .footer-nav a, .footer-social a { display: inline-flex; align-items: center; min-height: 44px; }
+    .footer-nav ul { gap: 0; }
+    .footer-bottom { margin-top: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+}
